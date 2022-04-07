@@ -30,28 +30,32 @@ namespace WPF_Calc
 
         public void Calculate()
         {
-            switch (count)
+            if (rezultTextBox.Text != "" && calculationsTextBox.Text != "" || rezultTextBox.Text != null && calculationsTextBox != null)
             {
-                case 1:
-                    b = a + double.Parse(rezultTextBox.Text);
-                    rezultTextBox.Text = b.ToString();
-                    break;
-                case 2:
-                    b = a - double.Parse(rezultTextBox.Text);
-                    rezultTextBox.Text = b.ToString();
-                    break;
-                case 3:
-                    b = a * double.Parse(rezultTextBox.Text);
-                    rezultTextBox.Text = b.ToString();
-                    break;
-                case 4:
-                    b = a / double.Parse(rezultTextBox.Text);
-                    rezultTextBox.Text = b.ToString();
-                    break;
+                switch (count)
+                {
+                    case 1:
+                        b = a + double.Parse(rezultTextBox.Text);
+                        rezultTextBox.Text = b.ToString();
+                        break;
+                    case 2:
+                        b = a - double.Parse(rezultTextBox.Text);
+                        rezultTextBox.Text = b.ToString();
+                        break;
+                    case 3:
+                        b = a * double.Parse(rezultTextBox.Text);
+                        rezultTextBox.Text = b.ToString();
+                        break;
+                    case 4:
+                        b = a / double.Parse(rezultTextBox.Text);
+                        rezultTextBox.Text = b.ToString();
+                        break;
 
-                default:
-                    break;
+                    default:
+                        break;
+                }
             }
+            else { rezultTextBox.Text = "Error"; }
         }
 
         private void oneBtn_Click(object sender, RoutedEventArgs e)
